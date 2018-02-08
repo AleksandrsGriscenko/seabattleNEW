@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 @WebServlet(name = "WaitEnemyPlacementServlet", urlPatterns = "waitEnemyPlacement")
 public class WaitEnemyPlacementServlet extends HttpServlet {
-    @Inject
+    @Inject  //sozdajot objekt v sessii
     private PlayerGameContext playerGameContext;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

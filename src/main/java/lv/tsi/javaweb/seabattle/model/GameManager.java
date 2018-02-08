@@ -5,7 +5,7 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class GameManager {
     private Game incomplete;
-
+            //garantiruet vhod syn
     public synchronized Game register(Player player) {
         if (incomplete == null) {
             incomplete = new Game();
