@@ -8,6 +8,23 @@ package lv.tsi.javaweb.seabattle.model;
 public class Game {
     private Player player1;
     private Player player2;
+    private boolean player1Move = true;
+
+    public Player getCurrentPlayer() {
+        if (player1Move) {
+        return player1;
+    } else    {
+        return player2;
+    }
+    }
+
+    public Player getOpositePlayer() {
+        if (player1Move) {
+            return player2;
+        } else    {
+            return player1;
+        }
+    }
 
     public boolean isComplete() {
         return player1 != null && player2 != null;
