@@ -18,11 +18,13 @@ public class GameServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String addr = request.getParameter("addr"); //peredajot paremetr vystrela
+        playerGameContext.getGame().fire(addr);
+        response.sendRedirect("game");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       Player me = playerGameContext.getPlayer(); //spreshivaem kto igraet
+       Player me = playerGameContext.getPlayer(); //sprashivaem kto igraet
        Player current = playerGameContext.getGame().getCurrentPlayer();
        if (me == current) {
            request.getRequestDispatcher(("/WEB-INF/fire.jsp"))

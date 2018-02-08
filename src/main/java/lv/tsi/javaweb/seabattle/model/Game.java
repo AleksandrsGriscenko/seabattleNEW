@@ -49,4 +49,18 @@ public class Game {
     public void setPlayer2(Player player2) {
         this.player2 = player2;
     }
+
+    public void fire(String addr) {
+        CellContent c = getOpositePlayer().getMyField().getCell(addr);// sprashivaem estj korablj ili net?
+        if (c == CellContent.SHIP){
+            getOpositePlayer().getMyField().setCell(addr, CellContent.HIT);
+            getCurrentPlayer().getEnemyField().setCell(addr, CellContent.HIT);
+            return;
+        }
+        if(c == CellContent.EMPTY){
+            getOpositePlayer().getMyField().setCell(addr, CellContent.MISS);
+            getCurrentPlayer().getEnemyField().setCell(addr, CellContent.MISS);
+        }
+        player1Move = !player1Move; //peredajom hod soperniku
+    }
 }

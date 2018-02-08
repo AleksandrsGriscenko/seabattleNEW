@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta http-equiv="refresh" content="5">
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,900" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
@@ -44,7 +45,7 @@
     <c:set var="myField" value="${playerGameContext.player.myField}"/>
     <c:set var="enemyField" value="${playerGameContext.player.enemyField}"/>
 
-    <form method="post" class="w3-padding">
+    <div class="w3-padding">
         <table class="w3-margin">
             <tr>
                 <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
@@ -80,7 +81,7 @@
                     <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
                         <c:set var="addr" value="${col}${row}"/>
                         <td class="${enemyField.getCell(addr)}">
-                            <input type="radio" name="addr" value="${addr}" >
+
                         </td>
                     </c:forEach>
                 </tr>
@@ -90,9 +91,9 @@
 
 
 
-    <div> <input class="w3-button" type="submit" value="Fire!">  </div>
 
-    </form>
+
+    </div>
 
 </div>
 
